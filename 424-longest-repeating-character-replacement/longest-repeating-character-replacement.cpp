@@ -1,10 +1,10 @@
 class Solution {
 public:
-int characterReplacement(std::string s, int k) {
+int characterReplacement(string s, int k) {
         int maxCount = 0;  
         int maxLength = 0;  
         int l = 0;  
-        std::unordered_map<char, int> charCount;  
+        unordered_map<char, int> charCount;  
 
         for (int r = 0; r < s.size(); ++r) {
             charCount[s[r]]++;
