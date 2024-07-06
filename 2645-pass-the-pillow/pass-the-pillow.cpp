@@ -4,15 +4,15 @@ public:
 
         if(time==n-1)return n;
         int res;
-        int full_traversals = time/(n-1);
-
-        if(full_traversals%2==0)
+        int time_for_one=time/(n-1);
+        
+        if(time_for_one%2==0)
         {
-            res=time-((n-1)*full_traversals)+1;
+            res=time-((n-1)*time_for_one)+1;
         }
         else
         {
-            res=n-(time-((n-1)*full_traversals));
+            res=n-(time-((n-1)*time_for_one));
         }
         return res;
         
