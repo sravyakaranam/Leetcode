@@ -17,5 +17,6 @@ public:
             rightpro=rightpro*nums[i];
         }
         return res;
+
     }
 };
