@@ -1,14 +1,25 @@
 class Solution {
 public:
     int findComplement(int num) {
-        if (num == 0) return 1;
-        
-        unsigned int mask = ~0;
-        
-        while (num & mask) {
-            mask <<= 1;
+
+        string temp="";
+        int n=num;
+
+        while(n!=0)
+        {
+            int s=n%2;
+            temp=temp+to_string(s);
+            n=n/2;
         }
-        
-        return ~mask & ~num;
+        cout<<temp<<endl;
+        string res="";
+        for(int i=0;i<temp.length();i++)
+        {
+            if(temp[i]=='1')res+='0';
+            else if(temp[i]=='0')res+='1';
+        }
+        reverse(res.begin(),res.end());
+        cout<<res<<endl;
+        return stoi(res,0,2);
     }
 };
