@@ -1,30 +1,23 @@
 class Solution {
 public:
     string simplifyPath(string path) {
-        
+
         stack<string> st;
         string dir;
         stringstream ss(path);
 
-        while(getline(ss, dir,'/'))
+        while(getline(ss,dir,'/'))
         {
-            if(dir=="" || dir==".")
+            if(dir==""||dir==".")continue;
+            else if(dir=="..")
             {
-                continue;
-            }
-            if(dir=="..")
-            {
-                if(!st.empty())
-                {
-                    st.pop();
-                }
+                if(!st.empty())st.pop();
             }
             else
             {
                 st.push(dir);
             }
         }
-
         string res="";
         while(!st.empty())
         {
@@ -32,5 +25,6 @@ public:
             st.pop();
         }
         return res.empty()?"/":res;
+        
     }
 };
