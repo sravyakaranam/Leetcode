@@ -7,7 +7,7 @@ public:
         } else if (o == "+") {
             return a + b;
         } else if (o == "/") {
-            if (b != 0) { // Ensure no division by zero
+            if (b != 0) { 
                 return a / b;
             } else {
                 throw std::runtime_error("Division by zero.");
@@ -32,7 +32,7 @@ public:
                 s.push(to_string(re));
 
             }
-            else if(tokens[i]!="+" && tokens[i]!="-" && tokens[i]!="/" && tokens[i]!="*"){
+            else{
                 s.push(tokens[i]);
             }
             
