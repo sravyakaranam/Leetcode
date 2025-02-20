@@ -29,7 +29,8 @@ public:
                 if (left <= right) {
                     leftHeap.push(costs[left++]);
                 }
-            } else {
+            }
+             else {
                 totalCost += rightHeap.top();
                 rightHeap.pop();
                 // Add new right candidate if possible
